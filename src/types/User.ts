@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export type ID = string | number
 
 export type UserLocal = {
@@ -38,4 +40,8 @@ export type Error = {
   message: string
   documentation_url: string
   status: string
+}
+
+export type ContainerProps = {
+  children: ReactNode
 }

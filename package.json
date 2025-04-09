@@ -32,13 +32,15 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "sass": "^1.86.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.29.1",
     "vite": "^6.2.5",
     "vite-plugin-cp": "^6.0.0",
     "vite-plugin-html-template-mpa": "^1.0.29",
     "vite-plugin-inspect": "^11.0.0",
-    "vite-plugin-legacy-swc": "^1.2.3"
+    "vite-plugin-legacy-swc": "^1.2.3",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "dependencies": {
     "react": "^19.1.0",

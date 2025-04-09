@@ -6,6 +6,7 @@ import Inspect from 'vite-plugin-inspect'
 import legacy from 'vite-plugin-legacy-swc'
 import htmlTemplate from 'vite-plugin-html-template-mpa'
 import copy from 'vite-plugin-cp'
+import svgr from 'vite-plugin-svgr'
 
 const chunkSize = 1024
 
@@ -58,6 +59,16 @@ export default defineConfig(({ command }) => {
         }),
 
         react(),
+
+        svgr({
+          svgrOptions: {
+            exportType: 'named',
+            ref: true,
+            svgo: false,
+            titleProp: true,
+          },
+          include: '**/*.svg',
+        }),
       ],
 
       resolve: {
@@ -96,7 +107,20 @@ export default defineConfig(({ command }) => {
         watch: {},
       },
 
-      plugins: [Inspect(), copy(copyTarget), react()],
+      plugins: [
+        Inspect(),
+        copy(copyTarget),
+        react(),
+        svgr({
+          svgrOptions: {
+            exportType: 'named',
+            ref: true,
+            svgo: false,
+            titleProp: true,
+          },
+          include: '**/*.svg',
+        }),
+      ],
 
       resolve: {
         alias,
