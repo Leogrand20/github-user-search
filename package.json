@@ -1,0 +1,47 @@
+{
+  "name": "user-search-app",
+  "private": true,
+  "version": "1.0.0",
+  "author": {
+    "name": "Denis Leonenko",
+    "email": "leograndprix@gmail.com",
+    "url": "https://leograndprix.ru"
+  },
+  "homepage": "https://github.com/Leogrand20/user-search-app",
+  "categories": [
+    "Other"
+  ],
+  "description": "Practice",
+  "main": "index.tsx",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 8000 --open",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --open",
+    "bp": "tsc -b && vite build&&vite preview --host --port 4000 --open",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/css": "^0.6.0",
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "eslint": "^9.24.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1",
+    "vite": "^6.2.5",
+    "vite-plugin-cp": "^6.0.0",
+    "vite-plugin-html-template-mpa": "^1.0.29",
+    "vite-plugin-inspect": "^11.0.0",
+    "vite-plugin-legacy-swc": "^1.2.3"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
