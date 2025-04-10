@@ -6,16 +6,23 @@ import { ReactComponent as MoonIcon } from '@icons/icon-moon.svg'
 import styles from './ThemeSwitcher.module.scss'
 
 export const ThemeSwitcher = () => {
-  const [isDark, setDark] = useState(false)
-  const themeText = isDark ? 'Light' : 'Dark'
-  const ThemeIcon = isDark ? SunIcon : MoonIcon
+  const originalTheme = localStorage.getItem('theme')
+  const [isDark, setDark] = useState(originalTheme)
+  const themeText = isDark === 'dark' ? 'Light' : 'Dark'
+  const ThemeIcon = isDark === 'dark' ? SunIcon : MoonIcon
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light')
+    if (isDark) {
+      document.body.setAttribute('data-theme', isDark)
+      localStorage.setItem('theme', isDark)
+    }
   }, [isDark])
 
   return (
-    <div className={styles['switcher']} onClick={() => setDark(!isDark)}>
+    <div
+      className={styles['switcher']}
+      onClick={() => setDark(isDark === 'light' ? 'dark' : 'light')}
+    >
       <span>{themeText}</span>
 
       <ThemeIcon className={styles['icon']} />

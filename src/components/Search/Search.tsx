@@ -7,14 +7,14 @@ import { Button } from '../Button/Button'
 import styles from './Search.module.scss'
 
 export const Search: FC<SearchProps> = ({ hasError, onSubmit }) => {
-  const handleSubmit = (event: FormEvent<HTMLFormElement & FormFields>) => {
-    event.preventDefault()
+  const handleSubmit = (e: FormEvent<HTMLFormElement & FormFields>) => {
+    e.preventDefault()
 
-    const text = event.currentTarget.username.value
+    const text = e.currentTarget.username.value
 
     if (text.trim()) {
       onSubmit(text)
-      event.currentTarget.reset()
+      e.currentTarget.reset()
     }
   }
 
