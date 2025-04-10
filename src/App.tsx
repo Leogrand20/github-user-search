@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-import { Error, UserGitHub, UserLocal } from './types/User'
+import { UserLocal } from './types/User'
 
 import { Container } from './components/Container/Container'
 import { Header } from './layouts/Header/Header'
@@ -31,6 +31,7 @@ export const App = () => {
   return (
     <Container>
       <Header />
+
       <Search hasError={!user} onSubmit={fetchUser} />
 
       {user && <UserCard {...user} />}
