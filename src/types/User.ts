@@ -19,6 +19,12 @@ export type UserLocal = {
   created: string
 }
 
+export type UserStatProps = Pick<UserLocal, 'repos' | 'followers' | 'following'>
+
+export type UserTitleProps = Pick<UserLocal, 'name' | 'login' | 'created'>
+
+export type UserCardProps = UserLocal
+
 export type UserGitHub = {
   login: string
   id: ID
@@ -46,16 +52,22 @@ export type ContainerProps = {
   children: ReactNode
 }
 
-export type ButtonProps {
+export type ButtonProps = {
   children: string
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 export type SearchProps = {
-  hasError: boolean,
-  onSubmit: (text: string) => void,
+  hasError: boolean
+  onSubmit: (text: string) => void
 }
 
 export type FormFields = {
-  username: HTMLInputElement,
+  username: HTMLInputElement
+}
+
+export type InfoItemProps = {
+  icon: ReactNode
+  text?: string | null
+  isLink?: boolean
 }

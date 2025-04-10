@@ -19,7 +19,6 @@
     "resolveJsonModule": true, // import './*.json'
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src/",
     "outDir": "dist",
 
     /* Linting */
