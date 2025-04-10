@@ -4,7 +4,7 @@ import axios from 'axios'
 import { UserLocal } from './types/User'
 
 import { Container } from './components/Container/Container'
-import { Header } from './layouts/Header/Header'
+import { Header } from './components/Header/Header'
 import { Search } from './components/Search/Search'
 import { UserCard } from './components/UserCard/UserCard'
 
