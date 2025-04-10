@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, MouseEventHandler } from 'react'
 
 export type ID = string | number
 
@@ -44,4 +44,18 @@ export type Error = {
 
 export type ContainerProps = {
   children: ReactNode
+}
+
+export type ButtonProps {
+  children: string
+  onClick?: MouseEventHandler<HTMLButtonElement>
+}
+
+export type SearchProps = {
+  hasError: boolean,
+  onSubmit: (text: string) => void,
+}
+
+export type FormFields = {
+  username: HTMLInputElement,
 }
