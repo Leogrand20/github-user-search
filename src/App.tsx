@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 import { Error, UserGitHub, UserLocal } from './types/User'
 
@@ -18,13 +19,10 @@ export const App = () => {
   const [user, setUser] = useState<UserLocal | null>(defaultUser)
 
   const fetchUser = async (userName: string) => {
-    const url: string = BASE_URL + userName
+    const { data } = await axios(BASE_URL + userName)
 
-    const res = await fetch(url)
-    const user = (await res.json()) as UserGitHub | Error
-
-    if (isUserGitHub(user)) {
-      setUser(extractLocalUser(user))
+    if (isUserGitHub(data)) {
+      setUser(extractLocalUser(data))
     } else {
       setUser(null)
     }
