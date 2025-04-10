@@ -42,12 +42,6 @@ export type UserGitHub = {
   created_at: string
 }
 
-export type Error = {
-  message: string
-  documentation_url: string
-  status: string
-}
-
 export type ContainerProps = {
   children: ReactNode
 }

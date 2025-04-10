@@ -10,7 +10,6 @@ import { UserCard } from './components/UserCard/UserCard'
 
 import { defaultUser } from './mock/index'
 import { extractLocalUser } from './utils/exract-local-user'
-import { isUserGitHub } from './utils/typeGuards'
 import { BASE_URL } from './api/config'
 
 import './App.css'
@@ -19,11 +18,11 @@ export const App = () => {
   const [user, setUser] = useState<UserLocal | null>(defaultUser)
 
   const fetchUser = async (userName: string) => {
-    const { data } = await axios(BASE_URL + userName)
+    try {
+      const { data } = await axios(BASE_URL + userName)
 
-    if (isUserGitHub(data)) {
       setUser(extractLocalUser(data))
-    } else {
+    } catch (error) {
       setUser(null)
     }
   }
