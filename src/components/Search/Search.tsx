@@ -32,6 +32,7 @@ export const Search: FC<SearchProps> = ({ hasError, onSubmit }) => {
           name="username"
           placeholder="Search GitHub username..."
         />
+
         {hasError && <div className={styles['error']}>No result</div>}
 
         <Button>Search</Button>
