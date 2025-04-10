@@ -1,25 +1,24 @@
 import { useState } from 'react'
 
+import { Error, UserGitHub, UserLocal } from './types/User'
+
 import { Container } from './components/Container/Container'
 import { Header } from './layouts/Header/Header'
 import { Search } from './components/Search/Search'
 import { UserCard } from './components/UserCard/UserCard'
+
 import { defaultUser } from './mock/index'
-
-import { Error, UserGitHub, UserLocal } from './types/User'
-
 import { extractLocalUser } from './utils/exract-local-user'
 import { isUserGitHub } from './utils/typeGuards'
+import { BASE_URL } from './api/config'
 
 import './App.css'
-
-const BASE_URL = 'https://api.github.com/users/'
 
 export const App = () => {
   const [user, setUser] = useState<UserLocal | null>(defaultUser)
 
-  const fetchUser = async (username: string) => {
-    const url = BASE_URL + username
+  const fetchUser = async (userName: string) => {
+    const url: string = BASE_URL + userName
 
     const res = await fetch(url)
     const user = (await res.json()) as UserGitHub | Error
