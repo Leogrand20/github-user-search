@@ -22,7 +22,7 @@ export const InfoItem: FC<InfoItemProps> = ({ icon, isLink, text }) => {
           <a
             href={currentHref}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className={styles['link']}
           >
             {currentText}
