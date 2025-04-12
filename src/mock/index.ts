@@ -1,6 +1,6 @@
-import { UserLocal } from '../types/User'
+import { LocalUser } from '../types/User'
 
-export const defaultUser: UserLocal = {
+export const defaultUser: LocalUser = {
   login: 'Leogrand20',
   id: 102858962,
   avatar: 'https://avatars.githubusercontent.com/u/102858962?v=4',

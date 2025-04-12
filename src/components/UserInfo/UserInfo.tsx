@@ -1,22 +1,21 @@
+import { FC } from 'react'
+
 import { ReactComponent as CompanyIcon } from '@icons/icon-company.svg'
 import { ReactComponent as LocationIcon } from '@icons/icon-location.svg'
 import { ReactComponent as TwitterIcon } from '@icons/icon-twitter.svg'
 import { ReactComponent as BlogIcon } from '@icons/icon-website.svg'
 
-import { InfoItemProps, UserLocal } from '../../types/User'
+import { InfoItemProps, UserInfoProps } from '../../types/User'
 import { InfoItem } from '../InfoItem/InfoItem'
 
 import styles from './UserInfo.module.scss'
 
-interface UserInfoProps
-  extends Pick<UserLocal, 'blog' | 'company' | 'location' | 'twitter'> {}
-
-export const UserInfo = ({
+export const UserInfo: FC<UserInfoProps> = ({
   blog,
   company,
   location,
   twitter,
-}: UserInfoProps) => {
+}) => {
   const items: InfoItemProps[] = [
     {
       icon: <LocationIcon />,

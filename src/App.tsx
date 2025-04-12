@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-import { UserLocal } from './types/User'
+import { LocalUser } from './types/User'
 
 import { Container } from './components/Container/Container'
 import { Header } from './components/Header/Header'
@@ -15,7 +15,7 @@ import { BASE_URL } from './api/config'
 import './App.css'
 
 export const App = () => {
-  const [user, setUser] = useState<UserLocal | null>(defaultUser)
+  const [user, setUser] = useState<LocalUser | null>(defaultUser)
 
   const fetchUser = async (userName: string) => {
     try {

@@ -2,7 +2,24 @@ import { ReactNode, MouseEventHandler } from 'react'
 
 export type ID = string | number
 
-export type UserLocal = {
+export interface GitHubUser {
+  login: string
+  id: ID
+  avatar_url: string
+  html_url: string
+  name: string
+  company: string | null
+  blog: string
+  location: string | null
+  bio: string
+  twitter_username: string | null
+  public_repos: number
+  followers: number
+  following: number
+  created_at: string
+}
+
+export interface LocalUser {
   login: string
   id: ID
   avatar: string
@@ -19,28 +36,16 @@ export type UserLocal = {
   created: string
 }
 
-export type UserStatProps = Pick<UserLocal, 'repos' | 'followers' | 'following'>
+export type UserStatProps = Pick<LocalUser, 'repos' | 'followers' | 'following'>
 
-export type UserTitleProps = Pick<UserLocal, 'name' | 'login' | 'created'>
+export type UserTitleProps = Pick<LocalUser, 'name' | 'login' | 'created'>
 
-export type UserCardProps = UserLocal
+export type UserCardProps = LocalUser
 
-export type UserGitHub = {
-  login: string
-  id: ID
-  avatar_url: string
-  html_url: string
-  name: string
-  company: string | null
-  blog: string
-  location: string | null
-  bio: string
-  twitter_username: string | null
-  public_repos: number
-  followers: number
-  following: number
-  created_at: string
-}
+export type UserInfoProps = Pick<
+  LocalUser,
+  'blog' | 'company' | 'location' | 'twitter'
+>
 
 export type ContainerProps = {
   children: ReactNode
