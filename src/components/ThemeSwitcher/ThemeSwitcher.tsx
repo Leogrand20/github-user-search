@@ -17,7 +17,10 @@ export const ThemeSwitcher = () => {
   }, [isDark])
 
   return (
-    <div className={styles['switcher']} onClick={() => setDark(!isDark)}>
+    <div
+      className={styles['switcher']}
+      onClick={() => setDark(isDark === 'light' ? 'dark' : 'light')}
+    >
       <span>{themeText}</span>
 
       <ThemeIcon className={styles['icon']} />
