@@ -39,7 +39,7 @@ export const UserInfo: FC<UserInfoProps> = ({
   return (
     <div className={styles['userInfo']}>
       {items.map((item, index) => (
-        <InfoItem {...item} key={index} />
+        <InfoItem key={index} {...item} />
       ))}
     </div>
   )
