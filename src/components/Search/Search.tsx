@@ -1,9 +1,8 @@
+import { ReactComponent as SearchIcon } from '@icons/icon-search.svg'
 import { FC, FormEvent } from 'react'
 
-import { ReactComponent as SearchIcon } from '@icons/icon-search.svg'
-import { SearchProps, FormFields } from '../../types/User'
+import { FormFields,SearchProps } from '../../types/User'
 import { Button } from '../Button/Button'
-
 import styles from './Search.module.scss'
 
 export const Search: FC<SearchProps> = ({ hasError, onSubmit }) => {

@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import { InfoItemProps } from '../../types/User'
-
 import styles from './InfoItem.module.scss'
 
 export const InfoItem: FC<InfoItemProps> = ({ icon, isLink, text }) => {

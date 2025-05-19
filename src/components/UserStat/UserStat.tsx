@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import { UserStatProps } from '../../types/User'
-
 import styles from './UserStat.module.scss'
 
 export const UserStat: FC<UserStatProps> = ({

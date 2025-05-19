@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import { UserTitleProps } from '../../types/User'
-
 import styles from './UserTitle.module.scss'
 
 const localDate = new Intl.DateTimeFormat('en-GB', {

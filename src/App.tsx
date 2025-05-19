@@ -1,16 +1,14 @@
-import { useState } from 'react'
 import axios from 'axios'
+import { useState } from 'react'
 
-import { LocalUser } from './types/User'
-
+import { BASE_URL } from './api/config'
 import { Container } from './components/Container/Container'
 import { Header } from './components/Header/Header'
 import { Search } from './components/Search/Search'
 import { UserCard } from './components/UserCard/UserCard'
-
 import { defaultUser } from './mock/index'
+import { LocalUser } from './types/User'
 import { extractLocalUser } from './utils/exract-local-user'
-import { BASE_URL } from './api/config'
 
 import './App.css'
 
@@ -23,6 +21,7 @@ export const App = () => {
 
       setUser(extractLocalUser(data))
     } catch (error) {
+      console.log(error)
       setUser(null)
     }
   }

@@ -1,11 +1,9 @@
 import { FC } from 'react'
 
 import { UserCardProps } from '../../types/User'
-
 import { UserInfo } from '../UserInfo/UserInfo'
 import { UserStat } from '../UserStat/UserStat'
 import { UserTitle } from '../UserTitle/UserTitle'
-
 import styles from './UserCard.module.scss'
 
 export const UserCard: FC<UserCardProps> = (props) => {
